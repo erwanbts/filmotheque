@@ -1,0 +1,10 @@
+.movie-item {
+  background-color: red;
+  padding: 1% 2% 1% 2%;
+
+  & ul {
+    list-style:none;
+    margin-left:0;
+    padding-left:0;
+  }
+}
