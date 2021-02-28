@@ -1,8 +1,8 @@
 <template>
   <div id="movie">
     {{shared_data.movies[id].titre + " " + shared_data.movies[id].annee}}
-
-    {{shared_data.movies[id].id}}
+    <p> indexe : {{id}}</p>
+    <p> movie id : {{shared_data.movies[id].id}} </p>
     <button type="submit" v-on:click="edit()"> Editer </button>
     <button type="submit"  v-on:click="supprimerMovie()"> Supprimer </button>
     <div id="plus">
@@ -28,7 +28,7 @@ export default {
   ],
   data: function() {
     return {
-      id: this.$route.params.id,
+      id: this.$route.params.id - 1 ,
       shared_data: window.shared_data,
       isEdit: false,
     }
@@ -38,7 +38,7 @@ export default {
       this.$router.push({name: 'Movie-id-edit', params : {id : this.$route.params.id}})
     },
     supprimerMovie() {
-      this.movies.splice(this.shared_data.movies[this.$route.params.id].id, 1)
+      this.shared_data.movies.splice(this.shared_data.movies[this.id], 1)
     }
   }
 }

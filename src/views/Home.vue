@@ -34,7 +34,11 @@ export default {
   computed: {
     searchMovie() {
       return this.shared_data.movies.filter((movie) => {
-        return movie.titre.toLowerCase().includes(this.search.toLowerCase())
+        return movie.titre.toLowerCase().includes(this.search.toLowerCase()) ||
+            movie.realisateur.nom.toLowerCase().includes(this.search.toLowerCase()) ||
+            movie.realisateur.prenom.toLowerCase().includes(this.search.toLowerCase()) ||
+            movie.realisateur.nationality.toLowerCase().includes(this.search.toLowerCase())
+
       });
     }
   }

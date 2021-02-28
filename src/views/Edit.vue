@@ -25,12 +25,8 @@ export default {
   },
   methods: {
     supprimerMovie() {
-      this.shared_data.movies.splice(this.movie.id, 1)
+      this.shared_data.movies[this.id].splice(this.movie.id, 1)
     }
-  },
-  computed: {
-    this.movies[this.id].titre =  this.titre,
-    
   }
 }
 </script>
