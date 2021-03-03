@@ -3,7 +3,7 @@
     <img alt="Vue logo" src="../assets/logo.png">
     <div class="block-search">
       <label for="search">Recherche</label> <br />
-      <input type="text" id="search" v-model="search" placeholder="Search title..">
+      <input type="text" id="search" v-model="search" placeholder="Search">
       <div id="showRecheche">
       </div>
     </div>

@@ -1,9 +1,8 @@
 <template>
-  <div class="movie-item">
+  <div class="movie-item" v-on:click="show()">
     <ul>
       <li>
         <p> {{movie.titre + " " + movie.annee}}</p>
-        <button type="submit" v-on:click="show()"> Show </button>
       </li>
     </ul>
   </div>
