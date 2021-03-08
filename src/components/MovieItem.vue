@@ -16,12 +16,14 @@ export default {
   ],
   data: function() {
     return {
+      id: this.$route.params.id,
+      shared_data: window.shared_data,
       isEdit: false,
     }
   },
   methods: {
     show() {
-      this.$router.push({name: 'Movie-id', params : {id : this.movie.id}})
+      this.$router.push({name: 'Movie-id', params : {id : this.movie.id.toString()}})
     }
   }
 }

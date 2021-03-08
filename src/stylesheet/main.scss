@@ -7,22 +7,49 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  grid-template-rows: 1fr 7fr;
+
+  #brand {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  #nav {
+    grid-column: 1;
+    grid-row: 2;
+
+    padding: 30px;
+
+    ul {
+      list-style: none;
+
+      li {
+        display: block;
+      }
+    }
+
+    a {
+      font-weight: bold;
+      color: #2c3e50;
+
+      .router-link-exact-active {
+        color: #42b983;
+      }
+    }
+
+  }
+
+  #page {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .block-movie {
+    display: flex;
+    justify-content: space-around;
+  }
 }
 
-#nav {
-  padding: 30px;
-}
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
-
-.block-movie {
-  display: flex;
-  justify-content: space-around;
-}

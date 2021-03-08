@@ -1,22 +1,40 @@
 <template>
   <div id="add">
-    <p>TITRE :</p><input type="text" v-model="film">
-    <p>ANNEE :</p><input type="text" v-model="annee">
-    <p>NOM REALISATEUR :</p><input type="text" v-model="nom">
-    <p>PRENOM REALISATEUR :</p><input type="text" v-model="prenom">
-    <p>NATIONALITE REALISATEUR :</p><input type="text" v-model="nationality">
-    <p>DATE DE NAISSANCE REALISATEUR :</p><input type="text" v-model="birth"> <br/>
-    <button type="submit" v-on:click="add(film, annee, realisateur)"> Add </button> <br />
+    <button v-on:click="back()"> Back</button>
+    <form id="formA" @submit="submitAdd">
+      <p>TITRE :</p><input type="text" v-model="film">
+      <p>ANNEE :</p><input type="text" v-model="annee">
+      <p>NOM REALISATEUR :</p><input type="text" v-model="nom">
+      <p>PRENOM REALISATEUR :</p><input type="text" v-model="prenom">
+      <p>NATIONALITE REALISATEUR :</p><input type="text" v-model="nationality">
+      <p>DATE DE NAISSANCE REALISATEUR :</p><input type="text" v-model="birth"> <br/>
+      <input type="submit" value="submit"> <br />
+    </form>
   </div>
 </template>
 
 <script>
 export default {
   name: 'Add',
+  data: function() {
+    return {
+      shared_data: window.shared_data,
+      film: this.film,
+      annee: this.annee,
+      nom: this.nom,
+      prenom: this.prenom,
+      nationality: this.nationality,
+      birth: this.birth
+
+    }
+  },
   methods: {
-    add: function(film, annee="", nom, prenom, nationality, birth) {
-      this.shared_data.movies.push({id: 4, titre: film, annee: annee})
-      this.shared_data.movies.realisateur.push({nom: nom, prenom: prenom, nationality: nationality, birth: birth})
+    submitAdd: function() {
+      this.shared_data.movies.push({id: 4, titre: this.film, annee: this.annee, realisateur: {nom: this.nom, prenom: this.prenom, nationality: this.nationality, birth: this.birth}})
+      console.log({id: 4, titre: this.film, annee: this.annee, realisateur: {nom: this.nom, prenom: this.prenom, nationality: this.nationality, birth: this.birth}})
+    },
+    back: function() {
+      this.$router.push({name: 'Home'})
     }
   }
 }
