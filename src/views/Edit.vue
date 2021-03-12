@@ -1,6 +1,6 @@
 <template>
   <div id="edit">
-    <button v-on:click="back()"> Back</button>
+    <button id="back" v-on:click="back()"> Back</button>
     <form id="formM" @submit="submitEdit">
       <label> Titre :</label>
       <input type="text" v-model="titre">
@@ -24,7 +24,7 @@ export default {
   name: 'Edit',
   data: function() {
     return {
-      id: this.$route.params.id,
+      id: this.$route.params.id - 1,
       shared_data: window.shared_data,
 
       titre: this.titre,
@@ -37,16 +37,17 @@ export default {
   },
   methods: {
     submitEdit() {
-      this.movies[this.id].titre = this.titre
-      this.movies[this.id].annee = this.annee
-      this.movies[this.id].realisateur.prenom = this.realisateurPrenom
-      this.movies[this.id].realisateurNom = this.realisateurNom
-      this.movies[this.id].realisateur.nationality = this.realisateurNationality
-      this.movies[this.id].realisateur.birth = this.realisateurBirth
-      this.$router.push({name: 'Movie-id', params : {id : this.shared_data.movies[this.id].id}})
+      console.log(this.id)
+      this.shared_data.movies[this.id].titre = this.titre,
+      this.shared_data.movies[this.id].annee = this.annee,
+      this.shared_data.movies[this.id].realisateur.prenom = this.realisateurPrenom,
+      this.shared_data.movies[this.id].realisateurNom = this.realisateurNom,
+      this.shared_data.movies[this.id].realisateur.nationality = this.realisateurNationality,
+      this.shared_data.movies[this.id].realisateur.birth = this.realisateurBirth
+      this.$router.push({name: 'Movie-id'})
     },
     back: function() {
-      this.$router.push({name: 'Home'})
+      this.$router.push({name: 'Movie-id'})
     }
   },
   mounted() {

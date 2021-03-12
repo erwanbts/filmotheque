@@ -31,6 +31,7 @@ export default {
   methods: {
     submitAdd: function() {
       this.shared_data.movies.push({id: 4, titre: this.film, annee: this.annee, realisateur: {nom: this.nom, prenom: this.prenom, nationality: this.nationality, birth: this.birth}})
+      this.$router.push({name: 'Home'})
       console.log({id: 4, titre: this.film, annee: this.annee, realisateur: {nom: this.nom, prenom: this.prenom, nationality: this.nationality, birth: this.birth}})
     },
     back: function() {
@@ -43,3 +44,4 @@ export default {
 <style lang="scss" scoped>
   @import '../stylesheet/main.scss';
 </style>
+

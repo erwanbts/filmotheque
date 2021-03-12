@@ -1,5 +1,6 @@
 <template>
   <div id="movie">
+    <button v-on:click="back()"> Back</button>
     {{shared_data.movies[id].titre + " " + shared_data.movies[id].annee}}
     <p> indexe : {{id}}</p>
     <p> movie id : {{shared_data.movies[id].id}} </p>
@@ -26,7 +27,10 @@ export default {
       this.$router.push({name: 'Movie-id-edit', params : {id : this.shared_data.movies[this.id].id}})
     },
     supprimerMovie() {
-      this.shared_data.movies.splice(this.shared_data.movies[this.id].id, 1)
+      this.shared_data.movies.splice(this.shared_data.movies.id, 1)
+      this.$router.push({name: 'Home'})
+    },
+    back: function() {
       this.$router.push({name: 'Home'})
     }
   }

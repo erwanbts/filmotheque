@@ -7,7 +7,7 @@ Vue.config.productionTip = false
 window.shared_data = {
   movies: [
     {
-      id:1,
+      id: 1,
       titre: "Avatar", annee: 2012,
       realisateur: {
         nom: "Cameron",

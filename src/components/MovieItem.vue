@@ -23,7 +23,7 @@ export default {
   },
   methods: {
     show() {
-      this.$router.push({name: 'Movie-id', params : {id : this.movie.id.toString()}})
+      this.$router.push({name: 'Movie-id', params : {id : this.movie.id}})
     }
   }
 }
