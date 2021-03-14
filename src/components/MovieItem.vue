@@ -1,36 +1,28 @@
 <template>
   <div class="movie-item" v-on:click="show()">
-    <ul>
-      <li>
-        <img :src="movie.img">
-        <p> {{movie.titre + " " + movie.annee}}</p>
-        <Note :grad="movie.note"/>
-      </li>
-    </ul>
+    <img :src="movie.img">
+    <p class="item"> {{movie.titre}}</p>
+    <p> {{movie.id}}</p>
   </div>
 </template>
 
 <script>
-import Note from "@/components/Note";
+
 
 export default {
   name: 'MovieItem',
-  components: {
-    Note
-  },
   props: [
-    'movie',
+    'movie'
   ],
   data: function() {
     return {
-      id: this.$route.params.id,
-      shared_data: window.shared_data,
-      isEdit: false,
+      note: this.movie.note,
+      index: this.movie.id
     }
   },
   methods: {
     show() {
-      this.$router.push({name: 'Movie-id', params : {id : this.movie.id}})
+      this.$router.push({name: 'Movie-id', params : {id : this.index.toString()}})
     }
   }
 }

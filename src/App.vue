@@ -4,22 +4,21 @@
       <h1> FILMOTHEQUE </h1>
     </div>
     <div id="nav">
-      <ul>
-        <span>
+      <div>
+        <ul>
           <li>
-            <router-link to="/">Home</router-link>
+            <router-link to="/"><i class="fas fa-home"></i></router-link>
           </li>
-        </span>
-
-        <li>
-          <router-link to="/add">Add</router-link>
-        </li>
-        <li>
-          <router-link to="/about">About</router-link>
-        </li>
-      </ul>
-
+          <li>
+            <router-link to="/add"><i class="fas fa-plus"></i></router-link>
+          </li>
+          <li>
+            <router-link to="/about"><i class="fas fa-book-open"></i></router-link>
+          </li>
+        </ul>
+      </div>
     </div>
+
     <div id="page">
       <router-view/>
     </div>

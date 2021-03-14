@@ -1,14 +1,12 @@
 <template>
   <div class="home">
     <div class="block-search">
-      <label for="search">Recherche</label> <br />
+      <i class="fas fa-search"></i>
       <input type="text" id="search" v-model="search" placeholder="Search">
-      <div id="showRecheche">
-      </div>
     </div>
 
-    <div class="block-movie">
-      <MovieItem v-for="(movie, id) in searchMovie" v-bind:key="id" v-bind:movie="movie"></MovieItem>
+    <div class="block-movies">
+      <MovieItem v-for="(movie, id) in searchMovie" :key="id" :movie="movie"></MovieItem>
     </div>
 
   </div>

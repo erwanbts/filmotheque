@@ -1,25 +1,47 @@
 <template>
   <div id="movie">
-    <button id="back" v-on:click="back()"> Back</button>
-    {{shared_data.movies[id].titre + " " + shared_data.movies[id].annee}}
-    <p> indexe : {{id}}</p>
-    <p> movie id : {{shared_data.movies[id].id}} </p>
-    <button type="submit" v-on:click="edit()"> Editer </button>
-    <button type="submit"  v-on:click="supprimerMovie()"> Supprimer </button>
+    <button id="back" class="btn effect" v-on:click="back()"> <span> Back </span> </button>
+    <div class="info-movie">
+      <div class="img-movie">
+        <img :src="shared_data.movies[id].img" alt="Photo du film">
+      </div>
+      <div class="jsp-movie">
+        <p> indexe : {{id}}</p>
+        <p> movie id : {{shared_data.movies[id].id}} </p>
+        <h3> {{shared_data.movies[id].titre}} </h3>
+
+        <p class="important"> Genre </p>
+        <p> {{shared_data.movies[id].genre}} </p>
+
+        <p class="important"> Synopsis </p>
+        <p> {{shared_data.movies[id].syno}} </p>
+
+        <p class="important"> Réalisteur </p>
+        <p> {{shared_data.movies[id].realisateur.nom + " " + shared_data.movies[id].realisateur.prenom}}</p>
+        <p> {{shared_data.movies[id].realisateur.birth}} </p>
+        <p> {{shared_data.movies[id].realisateur.nationality}} </p>
+
+        <p class="important"> Note </p>
+        <rate :length="5" :value="shared_data.movies[id].note" :disabled="true" />
+
+        <div class="buttons">
+          <button class="btn effect" type="submit" v-on:click="edit()"> <span> Editer </span> </button>
+          <button class="btn effect" type="submit"  v-on:click="supprimerMovie()"> <span> Supprimer </span> </button>
+        </div>
+
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
+
 export default {
   name: 'Movie',
-  props: [
-    'movie',
-  ],
   data: function() {
     return {
-      id: this.$route.params.id - 1,
+      id: this.$route.params.id-1,
       shared_data: window.shared_data,
-      isEdit: false,
     }
   },
   methods: {
@@ -27,7 +49,7 @@ export default {
       this.$router.push({name: 'Movie-id-edit', params : {id : this.shared_data.movies[this.id].id}})
     },
     supprimerMovie() {
-      this.shared_data.movies.splice(this.shared_data.movies.id, 1)
+      this.shared_data.movies.splice(this.shared_data.movies[this.id].id, 1)
       this.$router.push({name: 'Home'})
     },
     back: function() {
