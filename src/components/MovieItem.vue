@@ -2,7 +2,6 @@
   <div class="movie-item" v-on:click="show()">
     <img :src="movie.img">
     <p class="item"> {{movie.titre}}</p>
-    <p> {{movie.id}}</p>
   </div>
 </template>
 

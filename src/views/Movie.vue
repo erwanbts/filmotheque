@@ -6,8 +6,6 @@
         <img :src="shared_data.movies[id].img" alt="Photo du film">
       </div>
       <div class="jsp-movie">
-        <p> indexe : {{id}}</p>
-        <p> movie id : {{shared_data.movies[id].id}} </p>
         <h3> {{shared_data.movies[id].titre}} </h3>
 
         <p class="important"> Genre </p>
