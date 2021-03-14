@@ -14,15 +14,9 @@ export default {
   props: [
     'movie'
   ],
-  data: function() {
-    return {
-      note: this.movie.note,
-      index: this.movie.id
-    }
-  },
   methods: {
     show() {
-      this.$router.push({name: 'Movie-id', params : {id : this.index.toString()}})
+      this.$router.push({name: 'Movie-id', params : {id : this.movie.id}})
     }
   }
 }

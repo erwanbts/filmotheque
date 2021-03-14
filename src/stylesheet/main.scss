@@ -12,7 +12,7 @@
 
   display: grid;
   grid-template-columns: 1fr 9fr;
-  grid-template-rows: 1fr;
+  grid-template-rows: 1fr 100vh;
 
   height: 100%;
   margin: 0px;
@@ -107,7 +107,7 @@
 
     #back {
       position: absolute;
-      left: 12%;
+      left: 15%;
       top: 12%;
     }
   }

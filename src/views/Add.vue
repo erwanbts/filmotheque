@@ -27,7 +27,7 @@
       <input type="text" v-model="nationality">
 
       <p class="important"> Date de naissance Réalisateur </p>
-      <input type="text" v-model="birth"> <br/>
+      <input type="date" v-model="birth"> <br/>
 
       <button class="btn effect xl"> <span> Ajouter le film </span> </button>
     </form>
