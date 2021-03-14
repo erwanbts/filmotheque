@@ -5,9 +5,12 @@
     </div>
     <div id="nav">
       <ul>
-        <li>
-          <router-link to="/">Home</router-link>
-        </li>
+        <span>
+          <li>
+            <router-link to="/">Home</router-link>
+          </li>
+        </span>
+
         <li>
           <router-link to="/add">Add</router-link>
         </li>

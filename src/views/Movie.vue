@@ -1,6 +1,6 @@
 <template>
   <div id="movie">
-    <button v-on:click="back()"> Back</button>
+    <button id="back" v-on:click="back()"> Back</button>
     {{shared_data.movies[id].titre + " " + shared_data.movies[id].annee}}
     <p> indexe : {{id}}</p>
     <p> movie id : {{shared_data.movies[id].id}} </p>

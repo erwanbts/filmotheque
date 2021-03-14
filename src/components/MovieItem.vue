@@ -2,15 +2,22 @@
   <div class="movie-item" v-on:click="show()">
     <ul>
       <li>
+        <img :src="movie.img">
         <p> {{movie.titre + " " + movie.annee}}</p>
+        <Note :grad="movie.note"/>
       </li>
     </ul>
   </div>
 </template>
 
 <script>
+import Note from "@/components/Note";
+
 export default {
   name: 'MovieItem',
+  components: {
+    Note
+  },
   props: [
     'movie',
   ],

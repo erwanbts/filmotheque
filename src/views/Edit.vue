@@ -1,19 +1,32 @@
 <template>
   <div id="edit">
     <button id="back" v-on:click="back()"> Back</button>
+
     <form id="formM" @submit="submitEdit">
-      <label> Titre :</label>
+      <div class="titlePage">
+        <h2> Formulaire de modification d'un film </h2>
+      </div>
+      <label> Titre </label>
       <input type="text" v-model="titre">
       <br>
-      <label> Annee :</label>
+      <label> Annee </label>
       <input type="text" v-model="annee">
       <br>
-      <label> Realisateur :</label>
-      <input type="text" v-model="realisateurPrenom">
-      <input type="text" v-model="realisateurNom">
-      <input type="text" v-model="realisateurNationality">
-      <input type="text" v-model="realisateurBirth">
-      <input type="submit" value="submit">
+      <h3> Realisateur </h3>
+      <div>
+        <label for="realisateurPrenom"> Prénom </label>
+        <input type="text" id="realisateurPrenom" v-model="realisateurPrenom">
+        <label for="realisateurNom"> Nom </label>
+        <input type="text" id="realisateurNom" v-model="realisateurNom">
+      </div>
+      <div>
+        <label for="realisateurNationality"> Nationalité </label>
+        <input type="text" id="realisateurNationality" v-model="realisateurNationality">
+        <label for="realisateurBirth"> Date de Naissance</label>
+        <input type="date" id="realisateurBirth" v-model="realisateurBirth">
+      </div>
+
+      <input type="submit" value="Modifier le film">
     </form>
 
   </div>

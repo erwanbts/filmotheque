@@ -8,7 +8,6 @@
     </div>
 
     <div class="block-movie">
-      <router-link :to="{ name: 'Movie-id', params: { id: this.shared_data.movies.id}}"></router-link>
       <MovieItem v-for="(movie, id) in searchMovie" v-bind:key="id" v-bind:movie="movie"></MovieItem>
     </div>
 
