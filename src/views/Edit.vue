@@ -20,6 +20,9 @@
       <label> Genre </label>
       <input type="text" v-model="genre">
       <br>
+      <label> Langue </label>
+      <input type="text" v-model="langue">
+      <br>
       <label> Annee </label>
       <input type="text" v-model="annee">
       <br>
@@ -56,6 +59,7 @@ export default {
       annee: this.annee,
       syno: this.syno,
       genre: this.genre,
+      langue: this.langue,
       realisateurPrenom: this.realisateurPrenom,
       realisateurNom: this.realisateurNom,
       realisateurNationality: this.realisateurNationality,
@@ -70,6 +74,7 @@ export default {
       this.shared_data.movies[this.id].syno = this.syno,
       this.shared_data.movies[this.id].genre = this.genre,
       this.shared_data.movies[this.id].note = this.note,
+      this.shared_data.movies[this.id].langue = this.langue,
       this.shared_data.movies[this.id].realisateur.prenom = this.realisateurPrenom,
       this.shared_data.movies[this.id].realisateurNom = this.realisateurNom,
       this.shared_data.movies[this.id].realisateur.nationality = this.realisateurNationality,
@@ -86,6 +91,7 @@ export default {
     this.annee = this.shared_data.movies[this.id].annee
     this.syno = this.shared_data.movies[this.id].syno
     this.genre = this.shared_data.movies[this.id].genre
+    this.langue = this.shared_data.movies[this.id].langue
     this.realisateurPrenom = this.shared_data.movies[this.id].realisateur.prenom
     this.realisateurNom = this.shared_data.movies[this.id].realisateur.nom
     this.realisateurNationality = this.shared_data.movies[this.id].realisateur.nationality

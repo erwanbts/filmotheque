@@ -8,6 +8,9 @@
       <div class="jsp-movie">
         <h3> {{shared_data.movies[id].titre}} </h3>
 
+        <p class="important"> Langue </p>
+        <p> {{shared_data.movies[id].langue}} </p>
+
         <p class="important"> Genre </p>
         <p> {{shared_data.movies[id].genre}} </p>
 

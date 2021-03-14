@@ -14,6 +14,9 @@
       <p class="important"> Synopsis </p>
       <textarea cols="30" v-model="syno"></textarea>
 
+      <p class="important"> Langue </p>
+      <input type="text" v-model="langue">
+
       <p class="important"> Genre </p>
       <input type="text" v-model="genre">
 
@@ -48,13 +51,14 @@ export default {
       prenom: this.prenom,
       nationality: this.nationality,
       birth: this.birth,
-      genre: this.genre
+      genre: this.genre,
+      langue: this.langue
 
     }
   },
   methods: {
     submitAdd: function() {
-      this.shared_data.movies.push({id: 4, titre: this.film, annee: this.annee, img: this.img, syno: this.syno, genre: this.genre, realisateur: {nom: this.nom, prenom: this.prenom, nationality: this.nationality, birth: this.birth}})
+      this.shared_data.movies.push({id: 4, titre: this.film, annee: this.annee, img: this.img, syno: this.syno, genre: this.genre, langue: this.langue, realisateur: {nom: this.nom, prenom: this.prenom, nationality: this.nationality, birth: this.birth}})
       this.$router.push({name: 'Home'})
     },
     back: function() {
