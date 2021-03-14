@@ -39,18 +39,21 @@
 
 export default {
   name: 'Movie',
+  props: {
+
+  },
   data: function() {
     return {
-      id: this.$route.params.id-1,
+      id: this.$route.params.id - 1,
       shared_data: window.shared_data,
     }
   },
   methods: {
     edit() {
-      this.$router.push({name: 'Movie-id-edit', params : {id : this.shared_data.movies[this.id].id}})
+      this.$router.push({name: 'Movie-id-edit', params : {id : this.$route.params.id}})
     },
     supprimerMovie() {
-      this.shared_data.movies.splice(this.shared_data.movies[this.id].id, 1)
+      this.shared_data.movies.splice(this.id, 1)
       this.$router.push({name: 'Home'})
     },
     back: function() {

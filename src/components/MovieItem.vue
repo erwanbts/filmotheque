@@ -1,7 +1,8 @@
 <template>
-  <div class="movie-item" v-on:click="show()">
+  <div class="movie-item" v-on:click="show(id)">
     <img :src="movie.img">
     <p class="item"> {{movie.titre}}</p>
+    <p> {{id}}</p>
   </div>
 </template>
 
@@ -11,11 +12,12 @@
 export default {
   name: 'MovieItem',
   props: [
-    'movie'
+    'movie',
+    'id'
   ],
   methods: {
-    show() {
-      this.$router.push({name: 'Movie-id', params : {id : this.movie.id}})
+    show(id) {
+      this.$router.push({name: 'Movie-id', params : {id : id + 1}})
     }
   }
 }

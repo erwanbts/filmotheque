@@ -6,7 +6,7 @@
     </div>
 
     <div class="block-movies">
-      <MovieItem v-for="(movie, id) in searchMovie" :key="id" :movie="movie"></MovieItem>
+      <MovieItem v-for="(movie, id) in searchMovie" :key="id" :movie="movie" :id="id"></MovieItem>
     </div>
 
   </div>
