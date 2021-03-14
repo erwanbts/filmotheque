@@ -3,34 +3,34 @@
     <button id="back" class="btn effect" v-on:click="back()"> <span> Back </span> </button>
     <form id="formA" @submit="submitAdd">
       <p class="important"> Titre </p>
-      <input type="text" v-model="film">
+      <input type="text" v-model="film" placeholder="Titre du film">
 
       <p class="important"> Url photo d'affiche </p>
-      <input type="url" v-model="img">
+      <input type="url" v-model="img" placeholder="Url de la photo">
 
       <p class="important"> Année de sortie </p>
-      <input type="number" value="2000" v-model="annee">
+      <input type="number" v-model="annee" placeholder="2000">
 
       <p class="important"> Synopsis </p>
-      <textarea cols="30" v-model="syno"></textarea>
+      <textarea cols="32" v-model="syno" placeholder="Synopsis"></textarea>
 
       <p class="important"> Langue </p>
-      <input type="text" v-model="langue">
+      <input type="text" v-model="langue" placeholder="Langue">
 
       <p class="important"> Genre </p>
-      <input type="text" v-model="genre">
+      <input type="text" v-model="genre" placeholder="genre">
 
       <p class="important"> Nom Réalisateur</p>
-      <input type="text"  v-model="nom">
+      <input type="text"  v-model="nom" placeholder="Nom du réalisateur">
 
       <p class="important"> Prenom Réalisateur</p>
-      <input type="text" v-model="prenom">
+      <input type="text" v-model="prenom" placeholder="Prenom du réalisateur">
 
       <p class="important"> Nationalité Réalisateur </p>
-      <input type="text" v-model="nationality">
+      <input type="text" v-model="nationality" placeholder="Nationalité du réalisateur">
 
       <p class="important"> Date de naissance Réalisateur </p>
-      <input type="date" v-model="birth"> <br/>
+      <input type="date" v-model="birth" placeholder="Date de naissance du réalisateur"> <br/>
 
       <button class="btn effect xl"> <span> Ajouter le film </span> </button>
     </form>
