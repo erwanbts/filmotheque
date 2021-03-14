@@ -121,6 +121,28 @@
     }
   }
 
+  .block-search {
+    margin: 0 auto;
+    width: 20%;
+    background: rgba(245, 245, 245, 0.8);
+    border: 1px solid #E7E7E7;
+    border-radius: 11px;
+
+    i {
+      padding: 0% 3% 0% 3%;
+    }
+
+    input {
+      border: none;
+      background: none;
+      margin: 0 auto;
+      height: 50px;
+    }
+    input:focus {
+      outline: none;
+    }
+  }
+
   .block-movies {
     display: flex;
     justify-content: center;
