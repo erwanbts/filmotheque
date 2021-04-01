@@ -12,9 +12,6 @@
           <li>
             <router-link to="/add"><i class="fas fa-plus"></i></router-link>
           </li>
-          <li>
-            <router-link to="/about"><i class="fas fa-book-open"></i></router-link>
-          </li>
         </ul>
       </div>
     </div>
